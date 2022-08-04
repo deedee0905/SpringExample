@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.aamita.spring.ex.database.model.UsedGoods;
 
 @Repository
-public interface UseGoodsDAO  {
+public interface UsedGoodsDAO  {
 
 	// used goods 의 모든 행을 조회하는 기능
 	public List<UsedGoods> selectUsedGoodsList();
