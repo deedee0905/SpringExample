@@ -6,7 +6,8 @@
   
   <mapper namespace="com.aamita.spring.ex.mybatis.dao.ReviewDAO">
   
-  	<select id="selectReview" resultType="com.aamita.spring.ex.mybatis.model.Review">
+  	<select id="selectReview" resultType="com.aamita.spring.ex.mybatis.model.Review"
+  	parameterType="int">
   		SELECT
   			`id`
   			,`storeId`
@@ -23,6 +24,63 @@
   		
   			
   	</select>
+  	
+  	<insert id="insertReview" parameterType="map">
+  		
+  		INSERT INTO
+  			`new_review`
+  		(
+  			`storeId`
+  			,`menu`
+  			,`userName`
+  			,`point`
+  			,`review`
+  			,`createdAt`
+  			,`updatedAt`
+  		)
+  		VALUES
+  		(
+  		#{storeId}
+  		, #{menu}
+  		, #{userName}
+  		, #{point}
+  		, #{review}
+  		, now()
+  		, now()
+  		)
+  		
+  		
+  	</insert>
+  	
+  	<insert id="insertReviewByObject" parameterType="com.aamita.spring.ex.mybatis.model.Review">
+  	
+  	INSERT INTO
+  			`new_review`
+  		(
+  			`storeId`
+  			,`menu`
+  			,`userName`
+  			,`point`
+  			,`review`
+  			,`createdAt`
+  			,`updatedAt`
+  		)
+  		VALUES
+  		(
+  			#{storeId}
+  			, #{menu}
+  			, #{userName}
+  			, #{point}
+  			, #{review}
+  			, now()
+  			, now()
+  		)
+  	
+  	</insert>
+  	
+  	
+  	
+  	
   
   
   </mapper>
