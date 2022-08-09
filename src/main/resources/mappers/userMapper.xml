@@ -31,6 +31,25 @@
   	
   	</insert>
   
+  	<select id="selectLastUser" resultType="com.aamita.spring.ex.jsp.model.User">
+  		SELECT
+  			`id`
+	  		,`name`
+	  		,`userId`
+	  		,`yyyymmdd`
+	  		,`introduce`
+	  		,`email`
+	  		, `createdAt`
+	  		, `updatedAt`
+	  	FROM
+	  		`new_user`
+	  	ORDER BY
+	  		`id` DESC
+	  	LIMIT 1
+	  		
+  	</select>
+  
+  
   
   </mapper>
   

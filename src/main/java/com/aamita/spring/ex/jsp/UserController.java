@@ -2,6 +2,7 @@ package com.aamita.spring.ex.jsp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aamita.spring.ex.jsp.bo.UserBO;
+import com.aamita.spring.ex.jsp.model.User;
 
 @Controller
 @RequestMapping("/jsp/user")
@@ -41,5 +43,20 @@ public class UserController {
 	public String userInput() {
 		return "jsp/userInput";
 	}
+	
+	// 가장 최근에 등록된 사용자 정보를 하나 얻어오는 기능
+	@GetMapping("/lastuser")
+	public String lastUser(Model model) {
+		
+		User lastUser = userBO.getLastUser();
+		
+		model.addAttribute("title", "최근 등록 사용자 정보");
+		model.addAttribute("user", lastUser);
+		
+		return "jsp/userInfo";
+	}
+	
+	
+	
 	
 }
