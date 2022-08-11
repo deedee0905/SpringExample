@@ -48,6 +48,32 @@
 	  	LIMIT 1
 	  		
   	</select>
+  	
+  	<insert id="insertUserByObject" parameterType="com.aamita.spring.ex.jsp.model.User"
+  	useGeneratedKeys="true" keyProperty="id">
+	  		INSERT INTO
+		  			`new_user`
+		  		(
+		  		`name`
+		  		,`userId`
+		  		,`yyyymmdd`
+		  		,`introduce`
+		  		,`email`
+		  		, `createdAt`
+		  		, `updatedAt`
+		  		)
+	  		VALUE
+	  		(
+	  			#{name}
+	  			, #{userId}	
+	  			, #{yyyymmdd}
+	  			, #{introduce}
+	  			, #{email}
+	  			, now()
+	  			, now()
+	  		)
+  	
+  	</insert>
   
   
   

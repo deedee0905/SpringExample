@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,6 +55,35 @@ public class UserController {
 		model.addAttribute("user", lastUser);
 		
 		return "jsp/userInfo";
+	}
+	
+	
+	@PostMapping("/add/view")
+	public String addUserView(
+//			@RequestParam("name") String name
+//			, @RequestParam("userId") String userId
+//			, @RequestParam("birthday") String birthday
+//			, @RequestParam("introduce") String introduce
+//			, @RequestParam("email") String email
+			@ModelAttribute User user
+			, Model model
+			) {
+		
+//		User user =  new User();
+//		user.setName(name);
+//		user.setUserId(userId);
+//		user.setYyyymmdd(birthday);
+//		user.setIntroduce(introduce);
+//		user.setEmail(email);
+		
+		
+		
+		int count = userBO.addUserByObject(user);
+		
+		model.addAttribute("user", user);
+		
+		return "jsp/userInfo";
+		
 	}
 	
 	
