@@ -52,6 +52,30 @@
 				<h4>나이 : ${user.age }</h4>
 				<h4>취미 : ${user.hobby }</h4>
 			</c:forEach>
+			
+			<table border="1">
+				<thead>
+					<tr>
+						<th>제목</th>
+						<th>작가</th>
+						<th>출판사</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<c:forEach var="book" items="${books }"> 
+						<tr>
+							<td>${book.title }</td>
+							<td>${book.author }</td>
+							<td>${book.publisher }</td>
+						</tr>
+					</c:forEach>
+					
+				</tbody>
+			
+			
+			
+			</table>
 		
 		
 
