@@ -12,8 +12,8 @@ public class UserBO {
 	@Autowired
 	private UserDAO userDAO;
 	
-	public int addUser(String name, String userId, String birthday, String introduce, String email) {
-		return userDAO.insertUser(name, userId, birthday, introduce, email);
+	public int addUser(String name, String birthday, String introduce, String email) {
+		return userDAO.insertUser(name, birthday, introduce, email);
 		
 	}
 	

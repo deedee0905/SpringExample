@@ -34,8 +34,7 @@ public class NewUserController {
 	}
 	
 	@GetMapping("/input")
-	public String userInput() {
-		
+	public String userInput () {
 		return "ajax/userInput";
 	}
 	
@@ -43,13 +42,12 @@ public class NewUserController {
 	@ResponseBody
 	public Map<String, String> addUser(
 			@RequestParam("name") String name
-			,@RequestParam("userId") String userId
-			,@RequestParam("birthday") String birthday
-			,@RequestParam("email") String email
+			, @RequestParam("birthday") String birthday
+			, @RequestParam("email") String email
 			) {
 		
-		int count = newUserBO.addUser(name, userId, birthday, email);
-	
+		int count = newUserBO.addUser(name, birthday, email);
+		
 		//성공시 : {"result":"success"}
 		//실패시 : {"result":"fail"}
 		

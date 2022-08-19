@@ -10,7 +10,6 @@ public interface UserDAO {
 	
 	public int insertUser(
 			@Param("name") String name
-			, @Param("userId") String userId
 			, @Param("birthday") String birthday
 			, @Param("introduce") String introduce
 			, @Param("email") String email);

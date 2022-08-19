@@ -6,7 +6,6 @@ public class User {
 	
 	private int id;
 	private String name;
-	private String userId;
 	private String yyyymmdd;
 	private String introduce;
 	private String email;
@@ -25,12 +24,8 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+	
+	
 	public String getYyyymmdd() {
 		return yyyymmdd;
 	}

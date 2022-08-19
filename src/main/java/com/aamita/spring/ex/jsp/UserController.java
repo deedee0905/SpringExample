@@ -28,13 +28,12 @@ public class UserController {
 	@ResponseBody
 	public String addUser(
 			@RequestParam("name") String name
-			, @RequestParam("userId") String userId
 			, @RequestParam("birthday") String birthday
 			, @RequestParam("introduce") String introduce
 			, @RequestParam("email") String email
 			) {
 		
-		int count = userBO.addUser(name, userId, birthday, introduce, email);
+		int count = userBO.addUser(name, birthday, introduce, email);
 		
 		return "삽입 결과 : " + count;
 		
@@ -61,7 +60,7 @@ public class UserController {
 	@PostMapping("/add/view")
 	public String addUserView(
 //			@RequestParam("name") String name
-//			, @RequestParam("userId") String userId
+//			
 //			, @RequestParam("birthday") String birthday
 //			, @RequestParam("introduce") String introduce
 //			, @RequestParam("email") String email

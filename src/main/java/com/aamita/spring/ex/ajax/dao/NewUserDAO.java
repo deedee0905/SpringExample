@@ -14,9 +14,10 @@ public interface NewUserDAO {
 	
 	public int insertUser(
 			@Param("name") String name
-			,@Param("userId") String userId
 			,@Param("birthday") String birthday
 			,@Param("email") String email
 			);
 
+	
+	
 }

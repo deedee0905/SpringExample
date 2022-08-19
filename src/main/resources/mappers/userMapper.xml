@@ -35,7 +35,6 @@
   		SELECT
   			`id`
 	  		,`name`
-	  		,`userId`
 	  		,`yyyymmdd`
 	  		,`introduce`
 	  		,`email`
@@ -55,7 +54,6 @@
 		  			`new_user`
 		  		(
 		  		`name`
-		  		,`userId`
 		  		,`yyyymmdd`
 		  		,`introduce`
 		  		,`email`
@@ -65,7 +63,6 @@
 	  		VALUE
 	  		(
 	  			#{name}
-	  			, #{userId}	
 	  			, #{yyyymmdd}
 	  			, #{introduce}
 	  			, #{email}

@@ -11,7 +11,6 @@
   		SELECT
   			`id`
 	  		,`name`
-	  		,`userId`
 	  		,`yyyymmdd`
 	  		,`introduce`
 	  		,`email`
@@ -23,30 +22,32 @@
   	</select>
   	
   	<insert id="insertUser" parameterType="map">
-  		INSERT INTO
-  			`new_user`
-  		(
-  			`name`
-	  		,`userId`
-	  		,`yyyymmdd`
-	  		,`email`
-	  		, `createdAt`
-	  		, `updatedAt`
-  		)
-  		VALUES
-  		(
-  			#{name}
-  			,#{userId}
-  			,#{birthday}
-  			,#{email}
-  			, now()
-  			, now()
-  		)
-  		
+  	INSERT INTO
+  		`new_user`
+  	(
+  		`name`
+	  	,`yyyymmdd`
+	  	,`email`
+	  	, `createdAt`
+	  	, `updatedAt`
+  	)
+  	VALUES
+  	(
+  		#{name}
+  		, #{birthday}
+  		, #{email}
+  		, now()
+  		, now()
+  	)
+  	
+  	
+  	
+  	</insert>
+  	
+  	
   			
   			
   	
-  	</insert>
   
   </mapper>
   

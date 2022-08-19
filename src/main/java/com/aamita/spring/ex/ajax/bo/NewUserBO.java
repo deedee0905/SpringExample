@@ -20,8 +20,10 @@ public class NewUserBO {
 		
 	}
 	
-	public int addUser(String name,String userId, String birthday, String email) {
-		return newUserDAO.insertUser(name, userId, birthday, email);
+	public int addUser(String name, String birthday, String email) {
+		
+		return newUserDAO.insertUser(name, birthday, email);
 	}
+	
 
 }
