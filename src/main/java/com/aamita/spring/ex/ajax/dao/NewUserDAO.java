@@ -18,6 +18,6 @@ public interface NewUserDAO {
 			,@Param("email") String email
 			);
 
-	
+	public int selectCountEmail(@Param("email") String email);
 	
 }

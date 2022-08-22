@@ -25,5 +25,15 @@ public class NewUserBO {
 		return newUserDAO.insertUser(name, birthday, email);
 	}
 	
-
+	// email 중복여부 알려주는 기능
+	public boolean isDuplicateEmail(String email) {
+		
+		int count = newUserDAO.selectCountEmail(email);
+		if(count == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 }
